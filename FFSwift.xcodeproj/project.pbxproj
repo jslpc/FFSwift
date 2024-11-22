@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 73;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,21 @@
 		238B24562CF0295E00BCAF2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B24552CF0295E00BCAF2C /* ContentView.swift */; };
 		238B24582CF0296000BCAF2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238B24572CF0296000BCAF2C /* Assets.xcassets */; };
 		238B245B2CF0296000BCAF2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 238B245A2CF0296000BCAF2C /* Preview Assets.xcassets */; };
+		238B24762CF0327900BCAF2C /* FFmpegConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238B24752CF0326C00BCAF2C /* FFmpegConverter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		238B246F2CF02B9D00BCAF2C /* Copy FFmpeg Binaries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+			);
+			name = "Copy FFmpeg Binaries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		238B24502CF0295E00BCAF2C /* FFSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,7 +34,36 @@
 		238B24572CF0296000BCAF2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		238B245A2CF0296000BCAF2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		238B245C2CF0296000BCAF2C /* FFSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FFSwift.entitlements; sourceTree = "<group>"; };
+		238B24742CF02C8200BCAF2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		238B24752CF0326C00BCAF2C /* FFmpegConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFmpegConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		238B24712CF02BBE00BCAF2C /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				ffmpeg = (
+					CodeSignOnCopy,
+				);
+				ffplay = (
+					CodeSignOnCopy,
+				);
+				ffprobe = (
+					CodeSignOnCopy,
+				);
+			};
+			buildPhase = 238B246F2CF02B9D00BCAF2C /* Copy FFmpeg Binaries */;
+			membershipExceptions = (
+				ffmpeg,
+				ffplay,
+				ffprobe,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		238B24622CF0299A00BCAF2C /* Binaries */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (238B24712CF02BBE00BCAF2C /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Binaries; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		238B244D2CF0295E00BCAF2C /* Frameworks */ = {
@@ -36,6 +79,7 @@
 		238B24472CF0295E00BCAF2C = {
 			isa = PBXGroup;
 			children = (
+				238B24622CF0299A00BCAF2C /* Binaries */,
 				238B24522CF0295E00BCAF2C /* FFSwift */,
 				238B24512CF0295E00BCAF2C /* Products */,
 			);
@@ -52,6 +96,8 @@
 		238B24522CF0295E00BCAF2C /* FFSwift */ = {
 			isa = PBXGroup;
 			children = (
+				238B24752CF0326C00BCAF2C /* FFmpegConverter.swift */,
+				238B24742CF02C8200BCAF2C /* Info.plist */,
 				238B24532CF0295E00BCAF2C /* FFSwiftApp.swift */,
 				238B24552CF0295E00BCAF2C /* ContentView.swift */,
 				238B24572CF0296000BCAF2C /* Assets.xcassets */,
@@ -79,10 +125,14 @@
 				238B244C2CF0295E00BCAF2C /* Sources */,
 				238B244D2CF0295E00BCAF2C /* Frameworks */,
 				238B244E2CF0295E00BCAF2C /* Resources */,
+				238B246F2CF02B9D00BCAF2C /* Copy FFmpeg Binaries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				238B24622CF0299A00BCAF2C /* Binaries */,
 			);
 			name = FFSwift;
 			productName = FFSwift;
@@ -105,7 +155,6 @@
 				};
 			};
 			buildConfigurationList = 238B244B2CF0295E00BCAF2C /* Build configuration list for PBXProject "FFSwift" */;
-			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -113,6 +162,7 @@
 				Base,
 			);
 			mainGroup = 238B24472CF0295E00BCAF2C;
+			preferredProjectObjectVersion = 60;
 			productRefGroup = 238B24512CF0295E00BCAF2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +191,7 @@
 			files = (
 				238B24562CF0295E00BCAF2C /* ContentView.swift in Sources */,
 				238B24542CF0295E00BCAF2C /* FFSwiftApp.swift in Sources */,
+				238B24762CF0327900BCAF2C /* FFmpegConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +330,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FFSwift/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +358,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FFSwift/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
